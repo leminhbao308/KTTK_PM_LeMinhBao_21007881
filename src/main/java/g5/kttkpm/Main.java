@@ -1,12 +1,12 @@
 package g5.kttkpm;
 
-import g5.kttkpm.singleton.*;
+import g5.kttkpm.singleton.SerializedSingleton;
 
-import java.lang.reflect.Constructor;
+import java.io.*;
 
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         // EagerInitializedSingleton
         // EagerInitializedSingleton eis1 = EagerInitializedSingleton.getInstance();
         // EagerInitializedSingleton eis2 = EagerInitializedSingleton.getInstance();
@@ -72,10 +72,29 @@ public class Main {
          */
         
         // EnumSingleton
-        EnumSingleton es1 = EnumSingleton.INSTANCE;
-        EnumSingleton es2 = EnumSingleton.INSTANCE;
+        // EnumSingleton es1 = EnumSingleton.INSTANCE;
+        // EnumSingleton es2 = EnumSingleton.INSTANCE;
         
-        System.out.println("EnumSingleton 1: " + es1.hashCode());
-        System.out.println("EnumSingleton 2: " + es2.hashCode());
+        // System.out.println("EnumSingleton 1: " + es1.hashCode());
+        // System.out.println("EnumSingleton 2: " + es2.hashCode());
+        
+        // SerializedSingleton
+        serializedSingleton();
+    }
+    
+    static void serializedSingleton() throws IOException, ClassNotFoundException {
+        SerializedSingleton ss1 = SerializedSingleton.getInstance();
+        
+        ObjectOutput out = new ObjectOutputStream(new FileOutputStream("filename.ser"));
+        out.writeObject(ss1);
+        out.close();
+        
+        //deserailize from file to object
+        ObjectInput in = new ObjectInputStream(new FileInputStream("filename.ser"));
+        SerializedSingleton ss2 = (SerializedSingleton) in.readObject();
+        in.close();
+        
+        System.out.println("SerializedSingleton 1: "+ss1.hashCode());
+        System.out.println("SerializedSingleton 2: "+ss2.hashCode());
     }
 }
