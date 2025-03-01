@@ -1,6 +1,8 @@
 package g5.kttkpm;
 
-import g5.kttkpm.singleton.BillPughSingleton;
+import g5.kttkpm.singleton.EagerInitializedSingleton;
+
+import java.lang.reflect.Constructor;
 
 public class Main {
     
@@ -41,10 +43,30 @@ public class Main {
         // System.out.println("ThreadSafeSingleton Double Check Locking 2: " + dcl2.hashCode());
         
         // BillPughSingleton
-        BillPughSingleton bps1 = BillPughSingleton.getInstance();
-        BillPughSingleton bps2 = BillPughSingleton.getInstance();
+        // BillPughSingleton bps1 = BillPughSingleton.getInstance();
+        // BillPughSingleton bps2 = BillPughSingleton.getInstance();
         
-        System.out.println("BillPughSingleton 1: " + bps1.hashCode());
-        System.out.println("BillPughSingleton 2: " + bps2.hashCode());
+        // System.out.println("BillPughSingleton 1: " + bps1.hashCode());
+        // System.out.println("BillPughSingleton 2: " + bps2.hashCode());
+        
+        // ReflectionSingletonTest
+        EagerInitializedSingleton instanceOne =
+            EagerInitializedSingleton.getInstance();
+        EagerInitializedSingleton instanceTwo = null;
+        try {
+            Constructor[] constructors =
+                EagerInitializedSingleton.class.getDeclaredConstructors();
+            for (Constructor constructor : constructors) {
+                //Below code will destroy the singleton pattern
+                constructor.setAccessible(true);
+                instanceTwo = (EagerInitializedSingleton)
+                    constructor.newInstance();
+                break;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        System.out.println("Instance 1: " + instanceOne.hashCode());
+        System.out.println("Instance 2: " + instanceTwo.hashCode());
     }
 }
