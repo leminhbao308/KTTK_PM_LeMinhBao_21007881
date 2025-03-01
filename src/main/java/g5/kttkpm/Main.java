@@ -1,9 +1,6 @@
 package g5.kttkpm;
 
-import g5.kttkpm.singleton.EagerInitializedSingleton;
-import g5.kttkpm.singleton.LazyInitializedSingleton;
-import g5.kttkpm.singleton.StaticBlockSingleton;
-import g5.kttkpm.singleton.ThreadSafeSingleton;
+import g5.kttkpm.singleton.BillPughSingleton;
 
 public class Main {
     
@@ -42,5 +39,12 @@ public class Main {
         
         // System.out.println("ThreadSafeSingleton Double Check Locking 1: " + dcl1.hashCode());
         // System.out.println("ThreadSafeSingleton Double Check Locking 2: " + dcl2.hashCode());
+        
+        // BillPughSingleton
+        BillPughSingleton bps1 = BillPughSingleton.getInstance();
+        BillPughSingleton bps2 = BillPughSingleton.getInstance();
+        
+        System.out.println("BillPughSingleton 1: " + bps1.hashCode());
+        System.out.println("BillPughSingleton 2: " + bps2.hashCode());
     }
 }
