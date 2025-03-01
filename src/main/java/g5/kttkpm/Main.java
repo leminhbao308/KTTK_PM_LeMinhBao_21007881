@@ -1,6 +1,7 @@
 package g5.kttkpm;
 
 import g5.kttkpm.singleton.EagerInitializedSingleton;
+import g5.kttkpm.singleton.LazyInitializedSingleton;
 import g5.kttkpm.singleton.StaticBlockSingleton;
 
 public class Main {
@@ -14,11 +15,18 @@ public class Main {
         // System.out.println("EagerInitializedSingleton 2: " + eis2.hashCode());
         
         // StaticBlockSingleton
-        StaticBlockSingleton sbs1 = StaticBlockSingleton.getInstance();
-        StaticBlockSingleton sbs2 = StaticBlockSingleton.getInstance();
+        // StaticBlockSingleton sbs1 = StaticBlockSingleton.getInstance();
+        // StaticBlockSingleton sbs2 = StaticBlockSingleton.getInstance();
         
-        System.out.println("StaticBlockSingleton 1: " + sbs1.hashCode());
-        System.out.println("StaticBlockSingleton 2: " + sbs2.hashCode());
+        // System.out.println("StaticBlockSingleton 1: " + sbs1.hashCode());
+        // System.out.println("StaticBlockSingleton 2: " + sbs2.hashCode());
+        
+        // LazyInitializedSingleton
+        LazyInitializedSingleton lis1 = LazyInitializedSingleton.getInstance();
+        LazyInitializedSingleton lis2 = LazyInitializedSingleton.getInstance();
+        
+        System.out.println("LazyInitializedSingleton 1: " + lis1.hashCode());
+        System.out.println("LazyInitializedSingleton 2: " + lis2.hashCode());
         
     }
 }
