@@ -3,6 +3,7 @@ package g5.kttkpm;
 import g5.kttkpm.singleton.EagerInitializedSingleton;
 import g5.kttkpm.singleton.LazyInitializedSingleton;
 import g5.kttkpm.singleton.StaticBlockSingleton;
+import g5.kttkpm.singleton.ThreadSafeSingleton;
 
 public class Main {
     
@@ -22,11 +23,17 @@ public class Main {
         // System.out.println("StaticBlockSingleton 2: " + sbs2.hashCode());
         
         // LazyInitializedSingleton
-        LazyInitializedSingleton lis1 = LazyInitializedSingleton.getInstance();
-        LazyInitializedSingleton lis2 = LazyInitializedSingleton.getInstance();
+        // LazyInitializedSingleton lis1 = LazyInitializedSingleton.getInstance();
+        // LazyInitializedSingleton lis2 = LazyInitializedSingleton.getInstance();
         
-        System.out.println("LazyInitializedSingleton 1: " + lis1.hashCode());
-        System.out.println("LazyInitializedSingleton 2: " + lis2.hashCode());
+        // System.out.println("LazyInitializedSingleton 1: " + lis1.hashCode());
+        // System.out.println("LazyInitializedSingleton 2: " + lis2.hashCode());
         
+        // ThreadSafeSingleton
+        ThreadSafeSingleton tss1 = ThreadSafeSingleton.getInstance();
+        ThreadSafeSingleton tss2 = ThreadSafeSingleton.getInstance();
+        
+        System.out.println("ThreadSafeSingleton 1: " + tss1.hashCode());
+        System.out.println("ThreadSafeSingleton 2: " + tss2.hashCode());
     }
 }
