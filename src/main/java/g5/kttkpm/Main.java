@@ -30,10 +30,17 @@ public class Main {
         // System.out.println("LazyInitializedSingleton 2: " + lis2.hashCode());
         
         // ThreadSafeSingleton
-        ThreadSafeSingleton tss1 = ThreadSafeSingleton.getInstance();
-        ThreadSafeSingleton tss2 = ThreadSafeSingleton.getInstance();
+        // ThreadSafeSingleton tss1 = ThreadSafeSingleton.getInstance();
+        // ThreadSafeSingleton tss2 = ThreadSafeSingleton.getInstance();
         
-        System.out.println("ThreadSafeSingleton 1: " + tss1.hashCode());
-        System.out.println("ThreadSafeSingleton 2: " + tss2.hashCode());
+        // System.out.println("ThreadSafeSingleton 1: " + tss1.hashCode());
+        // System.out.println("ThreadSafeSingleton 2: " + tss2.hashCode());
+        
+        // ThreadSafeSingleton Double Check Locking
+        // ThreadSafeSingleton dcl1 = ThreadSafeSingleton.getInstanceUsingDoubleLocking();
+        // ThreadSafeSingleton dcl2 = ThreadSafeSingleton.getInstanceUsingDoubleLocking();
+        
+        // System.out.println("ThreadSafeSingleton Double Check Locking 1: " + dcl1.hashCode());
+        // System.out.println("ThreadSafeSingleton Double Check Locking 2: " + dcl2.hashCode());
     }
 }
