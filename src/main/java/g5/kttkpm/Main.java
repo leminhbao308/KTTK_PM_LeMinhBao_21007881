@@ -1,6 +1,6 @@
 package g5.kttkpm;
 
-import g5.kttkpm.singleton.EagerInitializedSingleton;
+import g5.kttkpm.singleton.*;
 
 import java.lang.reflect.Constructor;
 
@@ -50,6 +50,7 @@ public class Main {
         // System.out.println("BillPughSingleton 2: " + bps2.hashCode());
         
         // ReflectionSingletonTest
+        /*
         EagerInitializedSingleton instanceOne =
             EagerInitializedSingleton.getInstance();
         EagerInitializedSingleton instanceTwo = null;
@@ -68,5 +69,13 @@ public class Main {
         }
         System.out.println("Instance 1: " + instanceOne.hashCode());
         System.out.println("Instance 2: " + instanceTwo.hashCode());
+         */
+        
+        // EnumSingleton
+        EnumSingleton es1 = EnumSingleton.INSTANCE;
+        EnumSingleton es2 = EnumSingleton.INSTANCE;
+        
+        System.out.println("EnumSingleton 1: " + es1.hashCode());
+        System.out.println("EnumSingleton 2: " + es2.hashCode());
     }
 }
