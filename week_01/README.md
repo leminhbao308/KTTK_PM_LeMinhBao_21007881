@@ -34,7 +34,7 @@ public class EagerInitializedSingleton {
 ```
 
 ### Image:
-![](\image\EagerInitializedSingleton.png)
+![](./image/EagerInitializedSingleton.png)
 
 ## StaticBlockSingleton
 
@@ -65,7 +65,7 @@ public class StaticBlockSingleton {
 ```
 
 ### Image:
-![](\image\StaticBlockSingleton.png)
+![](./image/StaticBlockSingleton.png)
 
 ## LazyInitializedSingleton
 
@@ -90,7 +90,7 @@ public class LazyInitializedSingleton {
 ```
 
 ### Image:
-![](\image\LazyInitializedSingleton.png)
+![](./image/LazyInitializedSingleton.png)
 
 ## ThreadSafeSingleton
 
@@ -125,7 +125,7 @@ public class ThreadSafeSingleton {
 ```
 
 ### Image:
-![](\image\ThreadSafeSingleton.png)
+![](./image/ThreadSafeSingleton.png)
 
 ## BillPughSingleton
 
@@ -149,7 +149,7 @@ public class BillPughSingleton {
 ```
 
 ### Image:
-![](\image\BillPughSingleton.png)
+![](./image/BillPughSingleton.png)
 
 ## ReflectionSingleton
 
@@ -179,7 +179,7 @@ static void reflectionSingleton() {
 ```
 
 ### Image:
-![](\image\ReflectionSingleton.png)
+![](./image/ReflectionSingleton.png)
 
 ## EnumSingleton
 
@@ -198,7 +198,7 @@ public enum EnumSingleton {
 ```
 
 ### Image:
-![](\image\EnumSingleton.png)
+![](./image/EnumSingleton.png)
 
 ## SerializedSingleton
 
@@ -229,6 +229,6 @@ public class SerializedSingleton implements Serializable {
 ```
 
 ### Image:
-![](\image\SerializedSingleton.png)
+![](./image/SerializedSingleton.png)
 
 
